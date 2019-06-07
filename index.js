@@ -1,5 +1,5 @@
 /**
- * AuthNet OpenID Middleware
+ * Koa OpenID Connect Middleware
  */
 require('dotenv').config()
 

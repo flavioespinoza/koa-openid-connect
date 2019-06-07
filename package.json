@@ -1,7 +1,7 @@
 {
   "name": "koa-openid-connect",
   "version": "0.0.0",
-  "description": "OpenID Connect Middleware for use with Koa",
+  "description": "Koa OpenID Connect Middleware",
   "main": "index.js",
   "scripts": {
     "test": "test"
