@@ -1,0 +1,30 @@
+{
+  "name": "koa-openid-connect",
+  "version": "0.0.0",
+  "description": "OpenID Connect Middleware for use with Koa",
+  "main": "index.js",
+  "scripts": {
+    "test": "test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/flavioespinoza/koa-openid-connect.git"
+  },
+  "keywords": [
+    "openid",
+    "oidc",
+    "koa"
+  ],
+  "author": "Flavio Espinoza",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/flavioespinoza/koa-openid-connect/issues"
+  },
+  "homepage": "https://github.com/flavioespinoza/koa-openid-connect#readme",
+  "dependencies": {
+    "dotenv": "^8.0.0",
+    "jwt-simple": "^0.5.6",
+    "node-fetch": "^2.6.0",
+    "ololog": "^1.1.128"
+  }
+}
