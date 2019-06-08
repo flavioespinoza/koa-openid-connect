@@ -58,7 +58,7 @@ CLIENT_ID="<your_client_id>"
 
 CLIENT_SECRET="<your_client_secret>"
 
-URI_REDIRECT=https://mydomain.example.com/openId/redirect
+URI_REDIRECT=https://mydomain.example.com/redirect
 ```
 
 Node-Koa server.js
@@ -71,6 +71,8 @@ const combineRouters = require('koa-combine-routers')
 const logger = require('koa-logger')
 const cors = require('kcors')
 const bodyParser = require('koa-bodyparser')
+const Chance = require('chance')
+const chance = new Chance()
 const _log = require('ololog').configure({locate: false})
 
 const KoaOpenIdConnect = require('koa-openid-connect')
@@ -88,7 +90,8 @@ const defaultConfig = {
 const openidConfig = {
 	client_id: process.env.CLIENT_ID,
 	client_secret: process.env.CLIENT_SECRET,
-	redirect_uri: process.env.URI_REDIRECT
+	redirect_uri: process.env.URI_REDIRECT,
+	state: chance.guid()
 }
 
 const openid = new KoaOpenIdConnect(defaultConfig, openidConfig)
@@ -113,6 +116,10 @@ loginRoute.get('/login', async function (ctx, next) {
 			// redirect to '/register'
 		}
 	})
+})
+
+registerRoute.get('/redirect', async function (ctx,  next) {
+	// handle OpenID redirect
 })
 
 registerRoute.get('/register', async function (ctx,  next) {
