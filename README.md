@@ -1,6 +1,11 @@
 # koa-openid-connect
 OpenID Connect Middleware for use with Koa
 
+## Overview
+We support `Authorization Code Flow`
+
+
+
 ## Getting Started
 Install with npm:
 ```bash
