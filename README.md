@@ -98,6 +98,7 @@ const openid = new KoaOpenIdConnect(defaultConfig, openidConfig)
 
 const homeRoute = new Router()
 const loginRoute = new Router()
+const redirectRoute = new Router()
 const registerRoute = new Router()
 
 homeRoute.get('/', async function (ctx, next) {
@@ -118,7 +119,7 @@ loginRoute.get('/login', async function (ctx, next) {
 	})
 })
 
-registerRoute.get('/redirect', async function (ctx,  next) {
+redirectRoute.get('/redirect', async function (ctx,  next) {
 	// handle OpenID redirect
 })
 
@@ -129,6 +130,7 @@ registerRoute.get('/register', async function (ctx,  next) {
 const router = combineRouters(
 	homeRoute,
 	loginRoute,
+	redirectRoute,
 	registerRoute
 )
 
